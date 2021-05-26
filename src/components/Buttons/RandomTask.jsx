@@ -45,7 +45,6 @@ const RandomTask = () => {
     });
     e.preventDefault();
     setSendRequest(true);
-    console.log(sendRequest);
   };
 
   return (
