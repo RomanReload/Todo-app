@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import todoReducer from "./reducer/reducer";
 import Input from "./components/Input/input";
 import TodoTasks from "./components/TodoList/Todo";
+import RemoveRandomBtn from "./components/Buttons";
 const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__;
 const store = createStore(todoReducer, reduxDevtools && reduxDevtools());
 
@@ -14,7 +15,8 @@ function App(props) {
       <div className="container-fluid">
         <Input />
         <TodoTasks />
-      </div>
+        <RemoveRandomBtn />
+      </div>{" "}
     </Provider>
   );
 }

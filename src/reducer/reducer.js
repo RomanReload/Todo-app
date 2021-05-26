@@ -16,6 +16,15 @@ const todoReducer = (state = initialState, action) => {
                     todoTasks: [...state.todoTasks, currentTask],
                 };
             }
+        case "RANDOM-TASK":
+            {
+                const currentTask = action.payload;
+                return {
+                    ...state,
+                    todoTasks: [...state.todoTasks, currentTask],
+                };
+            }
+
         case "INPUT-VALUE":
             {
                 const { inputValue } = action.payload;
@@ -51,6 +60,18 @@ const todoReducer = (state = initialState, action) => {
                 const filteredTodos = todoTasks.filter(({ id }) => id !== targetId);
                 return {...state, todoTasks: filteredTodos };
             }
+
+        case "DELETE-DONE-TASKS":
+            {
+                const { todoTasks } = state;
+                const filteredDoneTodo = todoTasks.filter(({ done }) => !done);
+                return {...state, todoTasks: filteredDoneTodo };
+            }
+        case "DELETE-ALL-TASKS":
+            {
+                return {...state, todoTasks: [] };
+            }
+
         default:
             return state;
     }

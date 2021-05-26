@@ -43,6 +43,7 @@ const Input = (props) => {
           <input
             type="input"
             autoComplete="off"
+            maxLength="20"
             onKeyPress={(e) =>
               e.key === "Enter" ? handleEnter(e.target.value) : null
             }
@@ -59,7 +60,7 @@ const Input = (props) => {
           </label>
         </div>
       </div>
-      <div className="col-4 text-center">
+      <div className="col-4 text-center mt-2">
         <Button value={valueFromRedux} />
       </div>
     </div>
